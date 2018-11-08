@@ -4,9 +4,12 @@ namespace Oxygencms\Uploads\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Upload extends Model
 {
+    use LogsActivity;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,10 +23,19 @@ class Upload extends Model
         'intent',
     ];
 
-    protected $appends = [
-        'public_path',
-        'update_url'
-    ];
+    /**
+     * Logged attributes.
+     *
+     * @var bool $logUnguarded
+     */
+    protected static $logFillable = true;
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['public_path', 'update_url'];
 
     /**
      * By default sort the uploads by order_id
