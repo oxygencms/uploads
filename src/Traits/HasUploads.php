@@ -26,9 +26,9 @@ trait HasUploads
      */
     public function uploadUrlByIntent(string $intent)
     {
-        $path = optional($this->uploads->where('intent', $intent)->first())->public_path ?: '/images/placeholder.png';
+        $path = optional($this->uploads->where('intent', $intent)->first())->public_path;
 
-        return asset('storage' . $path);
+        return $path ? asset('storage' . $path ) : asset('images/placeholder.png');
     }
 
     /**
