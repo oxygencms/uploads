@@ -67,7 +67,7 @@ class Upload extends Model
      */
     public function getPublicPathAttribute()
     {
-        return "/$this->path/$this->filename";
+        return "/storage/$this->path/$this->filename";
     }
 
     /**
