@@ -28,7 +28,7 @@ trait HasUploads
     {
         $path = optional($this->uploads->where('intent', $intent)->first())->public_path;
 
-        return $path ? asset('storage' . $path ) : asset('images/placeholder.png');
+        return $path ?: asset('images/placeholder.png');
     }
 
     /**
