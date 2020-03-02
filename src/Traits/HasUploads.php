@@ -4,13 +4,14 @@ namespace Oxygencms\Uploads\Traits;
 
 use Illuminate\Http\UploadedFile;
 use Oxygencms\Uploads\Models\Upload;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasUploads
 {
     /**
      * Get all of the model's uploads.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphMany;
+     * @return MorphMany;
      */
     public function uploads()
     {
@@ -74,4 +75,4 @@ trait HasUploads
 
         return $upload;
     }
-}   
+}

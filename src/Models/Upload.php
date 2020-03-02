@@ -5,6 +5,7 @@ namespace Oxygencms\Uploads\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Upload extends Model
 {
@@ -55,9 +56,9 @@ class Upload extends Model
     /**
      * Get all of the owning uploadable models.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     * @return MorphTo
      */
-    public function uploadable()
+    public function uploadable(): MorphTo
     {
         return $this->morphTo();
     }

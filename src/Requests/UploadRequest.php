@@ -42,12 +42,10 @@ class UploadRequest extends FormRequest
             ? (new $this->uploadable_class)->getTable()
             : null;
 
-        $rules = [
+        return [
             'uploadable_class' => ['required', 'string', new ClassExists],
             'uploadable_id' => "required|numeric|exists:$table,id",
             'file' => 'file',
         ];
-
-        return $rules;
     }
 }

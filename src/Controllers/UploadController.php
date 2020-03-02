@@ -95,7 +95,7 @@ class UploadController extends Controller
      *
      * @param Upload $upload
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      * @throws \Exception
      */
     public function destroy(Upload $upload)
