@@ -10,7 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4",
-        "oxygencms/core": "^2.0"
+        "oxygencms/core": "^2.0|dev-master"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
